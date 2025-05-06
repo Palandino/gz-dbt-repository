@@ -13,7 +13,7 @@ renamed as (
         orders_id,
         pdt_id AS product_id,
         revenue,
-        quantity,
+        quantity
     from source
 
 )
