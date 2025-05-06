@@ -6,15 +6,23 @@ sources:
       - name: gz_product
         identifier: raw_gz_product
         description: All product of Greenweez with purchase_price
-
+        columns:
+          - name: product_id
+            tests:
+            - unique
+            - not_null
       - name: gz_sales
         identifier: raw_gz_sales
         description: Sales of Greenweez with turnover per order_id and date
-        columns:
-          - name: orders_id
-            tests:
-            - unique
+        tests:
+          - unique:
+              column_name: "(orders_id || '-' || product_id)"
 
       - name: gz_ship
         identifier: raw_gz_ship
         description: shipping_fees and log_cost per order_id
+        columns:
+          - name: orders_id
+            tests:
+            - unique
+            - not_null
