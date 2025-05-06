@@ -11,7 +11,7 @@ sources:
         identifier: raw_gz_sales
         description: Sales of Greenweez with turnover per order_id and date
         columns:
-          - name: order_id
+          - name: orders_id
             tests:
             - unique
 
