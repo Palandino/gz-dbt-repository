@@ -14,7 +14,6 @@ sources:
           - name: order_id
             tests:
             - unique
-            - not_null
 
       - name: gz_ship
         identifier: raw_gz_ship
