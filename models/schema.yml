@@ -18,4 +18,3 @@ sources:
       - name: gz_ship
         identifier: raw_gz_ship
         description: shipping_fees and log_cost per order_id
-
