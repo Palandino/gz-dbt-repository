@@ -7,7 +7,7 @@ sources:
         identifier: raw_gz_product
         description: All product of Greenweez with purchase_price
         columns:
-          - name: product_id
+          - name: products_id
             tests:
             - unique
             - not_null
@@ -16,7 +16,7 @@ sources:
         description: Sales of Greenweez with turnover per order_id and date
         tests:
           - unique:
-              column_name: "(orders_id || '-' || product_id)"
+              column_name: "(orders_id || '-' || pdt_id)"
 
       - name: gz_ship
         identifier: raw_gz_ship
