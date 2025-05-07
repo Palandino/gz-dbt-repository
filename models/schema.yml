@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: gz_raw_data
+    tables:
+      - name: gz_product
+        identifier: raw_gz_product
+        description: All product of Greenweez with purchase_price
+        columns:
+          - name: products_id
+            tests:
+            - unique
+            - not_null
+      - name: gz_sales
+        identifier: raw_gz_sales
+        description: Sales of Greenweez with turnover per order_id and date
+        tests:
+          - unique:
+              column_name: "(orders_id || '-' || pdt_id)"
+
+      - name: gz_ship
+        identifier: raw_gz_ship
+        description: shipping_fees and log_cost per order_id
+        columns:
+          - name: orders_id
+            tests:
+            - unique
+            - not_null
