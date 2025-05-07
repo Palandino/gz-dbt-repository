@@ -25,6 +25,6 @@ SELECT
     shipping_fee,
     logcost,
     ship_cost,
-    ROUND(shipping_fee+logcost+ship_cost,2) AS oper_cost,
-    round(order_revenue-shipping_fee-logcost-ship_cost,2) AS oper_margin
+    ROUND(shipping_fee-logcost+ship-cost,2) AS oper_cost,
+    ROUND(order_revenue+shipping_fee-logcost-ship_cost,2) AS oper_margin
 FROM marge_oper_order
